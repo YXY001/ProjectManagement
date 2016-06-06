@@ -24,9 +24,7 @@
         android:label="天之骄子"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
-
-        </activity>
+        <activity android:name=".activity.MainActivity"></activity>
         <!-- push应用定义消息receiver声明 -->
         <receiver android:name=".utils.MyPushMessageReceiver">
             <intent-filter>
@@ -91,6 +89,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.RegisterActivity"></activity>
     </application>
 
 </manifest>

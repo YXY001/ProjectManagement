@@ -1,0 +1,69 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lxlt.projectmanagement.fragment.TelFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/Txt_tel_fragment_user"
+            style="@style/Common_Text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="phone"
+            android:background="@null"
+            android:hint="请输入手机号"/>
+
+        <!--中间分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E8E8E8"/>
+        <EditText
+            android:id="@+id/Txt_tel_fragment_password"
+            style="@style/Common_Text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:inputType="textPassword"
+            android:digits="1234567890abcedfghijklmnopqrstuvwxyz@._"
+            android:hint="请输入密码"/>
+        <!--中间分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E8E8E8"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <EditText
+                android:id="@+id/Txt_tel_fragment_verification_code"
+                style="@style/Common_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="请验证码"/>
+            <TextView
+                android:id="@+id/TView_tel_fragment_get_verification_code"
+                style="@style/Common_Text"
+                android:background="@drawable/verification_code_background"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="right"
+                android:text="获取验证码"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

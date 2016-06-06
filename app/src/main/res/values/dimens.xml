@@ -3,6 +3,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="text_size_level3">16dp</dimen>
-    <dimen name="distance_level3">16dp</dimen>
-    <dimen name="distance_level2">16dp</dimen>
+    <dimen name="distance_level3">10dp</dimen>
+    <dimen name="distance_level2">10dp</dimen>
 </resources>

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--最上方的颜色-->
     <color name="colorPrimary">#FF8000</color>
+    <!--toolbar的颜色-->
     <color name="colorPrimaryDark">#FF8000</color>
-    <color name="colorAccent">#FF4081</color>
+    <!--输入字体的光标的颜色-->
+    <color name="colorAccent">#FF8000</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorBlack">#000000</color>
     <color name="colorOrange">#FF8000</color>
