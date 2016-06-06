@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--solid 背景-->
+    <solid android:color="@color/colorPrimary"></solid>
+    <!--radius 边框角度-->
+    <!--stroke 边框宽度 及颜色-->
+    <stroke android:color="@color/colorPrimary" android:width="2px" ></stroke>
+</shape>
