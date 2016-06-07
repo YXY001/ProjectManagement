@@ -1,49 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context="com.lxlt.projectmanagement.activity.RegisterActivity">
-        <LinearLayout
-            android:orientation="horizontal"
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/register_toolbar"
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_height="100dp">
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
             <TextView
-                android:id="@+id/Tview_register_tel"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="手机注册"/>
+                android:id="@+id/Tview_register_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/lxlt_clear"/>
             <TextView
-                android:id="@+id/Tview_register_mail"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:text="邮箱注册"
-                android:gravity="center"/>
-        </LinearLayout>
+                android:id="@+id/Tview_register_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:textSize="20dp"
+                android:gravity="center_horizontal"/>
+            </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/VPager_register"
-        android:layout_width="match_parent"
-        android:overScrollMode="never"
-        android:layout_height="300dp"/>
+    <include layout="@layout/content_register" />
 
-    <Button
-        android:id="@+id/Btn_register"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:background="@drawable/loginselector"
-        android:clickable="true"
-        android:focusable="true"
-        android:gravity="center"
-        android:text="立即注册"
-        android:textColor="@color/colorWhite"
-        android:textSize="20sp" />
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

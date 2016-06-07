@@ -24,7 +24,7 @@
         android:label="天之骄子"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.MainActivity" />
         <!-- push应用定义消息receiver声明 -->
         <receiver android:name=".utils.MyPushMessageReceiver">
             <intent-filter>
@@ -82,14 +82,19 @@
             android:exported="true" />
         <!-- push结束 -->
 
-        <activity android:name=".activity.LoginActivity">
+        <activity android:name=".activity.LoginActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.RegisterActivity"></activity>
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:parentActivityName=".activity.LoginActivity"
+            android:label="@string/title_activity_register"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

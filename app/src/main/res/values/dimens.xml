@@ -5,4 +5,5 @@
     <dimen name="text_size_level3">16dp</dimen>
     <dimen name="distance_level3">10dp</dimen>
     <dimen name="distance_level2">10dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

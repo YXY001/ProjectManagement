@@ -1,9 +1,13 @@
 package com.lxlt.projectmanagement.activity;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,15 +22,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener,ViewPager.OnPageChangeListener {
-
-
-    private TextView Tview_register_tel,Tview_register_mail;
+    private TextView Tview_register_tel,Tview_register_mail,Tview_register_clear,Tview_register_title;
     private Button Btn_register;
     private ViewPager VPager_register;
     private List<Fragment> list_fragment;
     private Main_fragmentAdapter myAdapter;
     private static int TAG = 0;
-
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,15 +41,20 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         //初始化点击事件
         click();
     }
-
     /**
      * 初始化界面
      */
     private void  initView(){
         this.Tview_register_tel  = (TextView) findViewById(R.id.Tview_register_tel);
         this.Tview_register_mail  = (TextView) findViewById(R.id.Tview_register_mail);
+        this.Tview_register_clear  = (TextView) findViewById(R.id.Tview_register_clear);
+        this.Tview_register_title  = (TextView) findViewById(R.id.Tview_register_title);
         this.Btn_register  = (Button) findViewById(R.id.Btn_register);
         this.VPager_register  = (ViewPager) findViewById(R.id.VPager_register);
+        this.toolbar = (Toolbar) findViewById(R.id.register_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         //初始化fragment
         TelFragment telFragment = new TelFragment();
@@ -64,6 +71,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         this.Tview_register_mail.setOnClickListener(this);
         this.Btn_register.setOnClickListener(this);
         this.VPager_register.setOnPageChangeListener(this);
+        this.Tview_register_clear.setOnClickListener(this);
     }
 
     @Override
@@ -78,7 +86,18 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             case R.id.Btn_register:
                 registerClick();
                 break;
+            case R.id.Tview_register_clear:
+                back();
+                break;
         }
+    }
+
+    /**
+     * 点击clear按钮时的点击事件
+     */
+    private void back(){
+        Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+        startActivity(intent);
     }
 
     /**
@@ -91,6 +110,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         this.Tview_register_mail.setTextColor(getResources().getColor(R.color.colorBlack));
         this.VPager_register.setCurrentItem(0);
         TAG = 0;
+        this.Tview_register_title.setText("手机注册");
     }
 
     /**
@@ -103,6 +123,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         this.Tview_register_tel.setTextColor(getResources().getColor(R.color.colorBlack));
         this.VPager_register.setCurrentItem(1);
         TAG =1;
+        this.Tview_register_title.setText("邮箱注册");
     }
 
     /**
